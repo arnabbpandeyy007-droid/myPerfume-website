@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 45 55% 55%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 40 33% 93%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 45 55% 55%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 72% 41%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 10%;
+    --input: 0 0% 10%;
+    --ring: 45 55% 55%;
+    --radius: 0.5rem;
+    --gold: #C9A94E;
+    --cream: #F5F0E8;
+    --black: #000000;
+    --charcoal: #0A0A0A;
+    --border-dark: #1A1A1A;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-black text-neutral-100 antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  .text-gold {
+    color: var(--gold);
+  }
+  .bg-gold {
+    background-color: var(--gold);
+  }
+  .border-gold {
+    border-color: var(--gold);
+  }
+  .bg-cream {
+    background-color: var(--cream);
+  }
+  .text-cream {
+    color: var(--cream);
+  }
+  .bg-charcoal {
+    background-color: var(--charcoal);
+  }
+  .border-dark {
+    border-color: var(--border-dark);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
